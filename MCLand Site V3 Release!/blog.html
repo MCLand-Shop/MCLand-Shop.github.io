@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beta بلاگ - MCLandShop </title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Cdefs%3E%3ClinearGradient%20id='grad1'%20x1='0%25'%20y1='0%25'%20x2='100%25'%20y2='100%25'%3E%3Cstop%20offset='0%25'%20style='stop-color:%2300c6ff;stop-opacity:1'%20/%3E%3Cstop%20offset='100%25'%20style='stop-color:%23e040fb;stop-opacity:1'%20/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle%20cx='50'%20cy='50'%20r='45'%20stroke='url(%23grad1)'%20stroke-width='8'%20fill='none'/%3E%3Ctext%20x='50'%20y='68'%20font-family='Silkscreen,%20sans-serif'%20font-size='60'%20fill='white'%20text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+<style>
+body {margin:0;font-family:Vazirmatn,sans-serif;background:#0f0e17;color:#fff;}
+a{text-decoration:none;color:inherit;}
+header{background:#1e1b4b;padding:20px;display:flex;justify-content:space-between;align-items:center;}
+header nav a{margin:0 12px;padding:6px 12px;border-radius:8px;transition:.3s;}
+header nav a:hover{background:#9333ea;}
+main{padding:60px 20px;max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:40px;}
+.blog-list{flex:1 1 700px;display:grid;grid-template-columns:1fr;gap:24px;}
+.blog-card{background:rgba(255,255,255,0.05);border-radius:16px;overflow:hidden;opacity:0;transform:translateY(30px);animation:fadeInUp 0.8s ease forwards;transition:transform .3s,box-shadow .3s;}
+.blog-card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 16px 36px rgba(0,0,0,0.45);}
+.blog-card img{width:100%;height:auto;}
+.blog-card div{padding:16px;text-align:right;}
+.blog-card p{opacity:0.8;margin:8px 0;}
+.blog-card .tags{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;}
+.blog-card .tags span{background:rgba(255,255,255,0.15);padding:4px 8px;border-radius:8px;font-size:12px;}
+.blog-card a{display:inline-block;margin-top:12px;padding:8px 14px;background:#9333ea;color:#fff;border-radius:12px;}
+.sidebar{flex:1 1 250px;display:flex;flex-direction:column;gap:20px;}
+.sidebar h3{margin-bottom:12px;text-align:right;}
+.sidebar .recent-post,.sidebar .popular-post,.sidebar .categories{background:rgba(255,255,255,0.05);padding:12px;border-radius:12px;}
+.sidebar .recent-post a,.sidebar .popular-post a,.sidebar .categories a{display:block;padding:6px 0;color:#fff;}
+#searchBar{width:100%;padding:8px;border-radius:12px;border:none;margin-bottom:12px;background:rgba(255,255,255,0.1);color:#fff;}
+#searchBar::placeholder{color:rgba(255,255,255,0.6);}
+@keyframes fadeInUp{from {opacity:0;transform:translateY(30px);} to {opacity:1;transform:translateY(0);}}
+footer{margin-top:60px;padding:30px;background:#1e1b4b;text-align:center;font-size:14px;color:rgba(255,255,255,0.7);}
+@media(max-width:900px){main{flex-direction:column;} .blog-list,.sidebar{flex:1 1 100%;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><h1>MCLandShop</h1></div>
+  <nav>
+    <a href="blog.html">خانه</a>
+    <a href="index.html">فروشگاه</a>
+    <a href="blog.html">بلاگ</a>
+    <a href="about.html">درباره ما</a>
+  </nav>
+</header>
+
+<main>
+  <!-- سایدبار -->
+  <aside class="sidebar">
+    <h3>جستجو</h3>
+    <input type="text" id="searchBar" placeholder="جستجو در بلاگ...">
+
+    <div class="recent-post">
+      <h3>آخرین پست‌ها</h3>
+      <a href="blog/post1.html">اپدیت جدید سایت</a>
+      <a href="blog/post4.html">گیم مود جدید اسکای ماین</a>
+    </div>
+
+    <div class="popular-post">
+      <h3>محبوب‌ترین‌ها</h3>
+      <a href="blog/post1.html">اپدیت جدید سایت</a>
+      <a href="blog/post2.html">ایونت جدید....</a>
+    </div>
+
+    <div class="categories">
+      <h3>دسته‌بندی‌ها</h3>
+      <a href="#">اخبار</a>
+      <a href="#">تخفیف</a>
+      <a href="#">مقالات</a>
+      <a href="#">آموزش</a>
+    </div>
+  </aside>
+
+  <!-- لیست بلاگ‌ها -->
+  <div class="blog-list" id="blogList">
+    <div class="blog-card" data-title="خبر اول" style="animation-delay:0s;">
+      <img src="https://mclandshop.pages.dev/images/post1.jpg" alt="خبر اول">
+      <div>
+        <h3>ورژن 3 سایت</h3>
+        <p>ریلیز شد! با پشتیبان و ...</p>
+        <div class="tags"><span>اخبار</span><span>سایت</span></div>
+        <a href="blog/post1.html">ادامه مطلب</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-title="خبر دوم" style="animation-delay:.2s;">
+      <img src="https://mclandshop.pages.dev/images/post2.jpg" alt="خبر دوم">
+      <div>
+        <h3>ایونت جدید در اسکای ماین درحال ساخت!</h3>
+        <p>ایونت جدید در گیم مود جدید اسکای ماین داریم ....</p>
+        <div class="tags"><span>اخبار</span><span>ایونت</span></div>
+        <a href="#">ادامه مطلب</a>
+      </div>
+    </div>
+
+    <div class="blog-card" data-title="خبر سوم" style="animation-delay:.4s;">
+      <img src="https://mclandshop.pages.dev/images/post3.png" alt="خبر سوم">
+      <div>
+        <h3>به ما بپیوندید</h3>
+        <p>به توانایی شما در کمک به بهبود سرور نیاز داریم.</p>
+        <div class="tags"><span>اخبار</span></div>
+        <a href="joinus.html">ادامه مطلب</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  © 2025 MCLandShop — تمام حقوق محفوظ است.
+</footer>
+
+<script>
+// جستجوی داخلی بلاگ
+const searchBar = document.getElementById('searchBar');
+const blogList = document.getElementById('blogList');
+searchBar.addEventListener('input', ()=>{
+  const query = searchBar.value.toLowerCase();
+  const cards = blogList.querySelectorAll('.blog-card');
+  cards.forEach(card=>{
+    const title = card.dataset.title.toLowerCase();
+    card.style.display = title.includes(query) ? 'block' : 'none';
+  });
+})
+</script>
+<script>
+  // غیرفعال کردن راست کلیک
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
+
+  // غیرفعال کردن کلیدهای معروف DevTools
+  document.addEventListener("keydown", function (e) {
+    if (
+      e.key === "F12" ||
+      (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) ||
+      (e.ctrlKey && e.key === "U")
+    ) {
+      e.preventDefault();
+      return false;
+    }
+  });
+</script>
+
+</body>
+</html>
+
